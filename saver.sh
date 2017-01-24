@@ -1,16 +1,18 @@
 #!/bin/bash
 
-#Welcome Message
+# Welcome Message
 clear
 echo -e "**Welcome to PsVita Saver**\n"
 
-#Variables
+# Variables
 DATE=$(date +%m%d%y)
 BACK="PSVita-BackUpSave-$DATE"
 TROPHYS="PSVita-Trophys-$DATE"
 SAVEDATA="PSVita-Save-$DATE"
 PSVITA="/Volumes/Untitled/tai"
 
+# Functions
+# 1. BackUp
 function BACKUP {
     if [[ -d ~/Desktop/"$BACK" ]]; then
         
@@ -33,7 +35,6 @@ function BACKUP {
                 echo "Have a Good Day!"
                 ;;
         esac
-
     else
 
         echo "Making a BackUp..."
@@ -45,6 +46,7 @@ function BACKUP {
     fi
 }
 
+# 2. Trophys
 function TROPHY {
     if [[ -d ~/Desktop/"$TROPHYS" ]]; then
         
@@ -67,7 +69,6 @@ function TROPHY {
                 echo "Have a Good Day!"
                 ;;
         esac
-
     else
 
         echo "Saving Your Trophys..."
@@ -79,6 +80,7 @@ function TROPHY {
     fi
 }
 
+# 3. Savedata
 function SAVE {
     if [[ -d ~/Desktop/"$SAVEDATA" ]]; then
         
@@ -101,7 +103,6 @@ function SAVE {
                 echo "Have a Good Day!"
                 ;;
         esac
-
     else
 
         echo "Making a BackUp to Your Savedata..."
@@ -113,6 +114,7 @@ function SAVE {
     fi
 }
 
+# Process
 if [[ -d $PSVITA ]]; then
 
     echo -e "What Would You Like To Do?\n"
@@ -136,7 +138,6 @@ if [[ -d $PSVITA ]]; then
             SAVE
             ;;
     esac
-
 else
     echo "No PsVita Connected"
 fi
