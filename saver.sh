@@ -140,4 +140,6 @@ if [[ -d $PSVITA ]]; then
     esac
 else
     echo "No PsVita Connected"
+    echo -en "\n**Press Enter to Exit**"
+    read
 fi
