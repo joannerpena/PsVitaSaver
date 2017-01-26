@@ -140,6 +140,11 @@ if [[ -d $PSVITA ]]; then
     esac
 else
     echo "No PsVita Connected"
-    echo -en "\n**Press Enter to Exit**"
-    read
+    # -e : LineBreak Allowed (\n)
+    # -n : Stay in the same line
+    echo -en "\n**Press Any Key to Exit**"
+    # -n : Number of Character allowed
+    # -s : Hide the User's input
+    read -n 1 -s
+    clear
 fi
