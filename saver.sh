@@ -2,22 +2,28 @@
 
 # Welcome Message
 clear
+# -e : LineBreak Allowed (\n)
 echo -e "**Welcome to PsVita Saver**\n"
 
 # Variables
+# DATE = Example 010117(Jan 01 2017)
 DATE=$(date +%m%d%y)
 BACK="PSVita-BackUpSave-$DATE"
 TROPHYS="PSVita-Trophys-$DATE"
 SAVEDATA="PSVita-Save-$DATE"
+# This makes sure to find a PsVita with Henkaku
 PSVITA="/Volumes/Untitled/tai"
 
 # Functions
 # 1. BackUp
 function BACKUP {
+    # -d : Exist?
     if [[ -d ~/Desktop/"$BACK" ]]; then
         
         echo "You've done a BackUp"
         echo "Would you like to Overwrite it?"
+        # -e : LineBreak Allowed (\n)
+        # -n : Stay in the same line
         echo -en "\nYes(y) or No(n)? : "
         read ANSWER
 
@@ -28,6 +34,7 @@ function BACKUP {
                 cd /Volumes/Untitled/
                 cd user/00
                 cp -r ./ ~/Desktop/"$BACK"
+                # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
             n)
@@ -41,6 +48,7 @@ function BACKUP {
         cd /Volumes/Untitled/
         cd user/00
         cp -r ./ ~/Desktop/"$BACK"
+        # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
     fi
@@ -48,10 +56,13 @@ function BACKUP {
 
 # 2. Trophys
 function TROPHY {
+    # -d : Exist?
     if [[ -d ~/Desktop/"$TROPHYS" ]]; then
         
         echo "You've Saved Your Trophys"
         echo "Would you like to Overwrite it?"
+        # -e : LineBreak Allowed (\n)
+        # -n : Stay in the same line
         echo -en "\nYes(y) or No(n)? : "
         read ANSWER
 
@@ -75,6 +86,7 @@ function TROPHY {
         cd /Volumes/Untitled/
         cd user/00
         cp -r ./trophy ~/Desktop/"$TROPHYS"
+        # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
     fi
@@ -82,10 +94,13 @@ function TROPHY {
 
 # 3. Savedata
 function SAVE {
+    # -d : Exist?
     if [[ -d ~/Desktop/"$SAVEDATA" ]]; then
         
         echo "You've Done a BackUp to Your Savedata"
         echo "Would you like to Overwrite it?"
+        # -e : LineBreak Allowed (\n)
+        # -n : Stay in the same line
         echo -en "\nYes(y) or No(n)? : "
         read ANSWER
 
@@ -96,6 +111,7 @@ function SAVE {
                 cd /Volumes/Untitled/
                 cd user/00
                 cp -r ./savedata ~/Desktop/"$SAVEDATA"
+                # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
             n)
@@ -109,18 +125,23 @@ function SAVE {
         cd /Volumes/Untitled/
         cd user/00
         cp -r ./savedata ~/Desktop/"$SAVEDATA"
+        # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
     fi
 }
 
 # Process
+# -d : Exist?
 if [[ -d $PSVITA ]]; then
 
+    # -e : LineBreak Allowed (\n)
     echo -e "What Would You Like To Do?\n"
     echo "1. BackUp!"
     echo "2. Save Trophys"
     echo "3. Save just your Savedata"
+    # -e : LineBreak Allowed (\n)
+    # -n : Stay in the same line
     echo -en "\n~~> 1,2 or 3? : "
     read ANSWER
 
