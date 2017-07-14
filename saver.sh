@@ -33,7 +33,7 @@ function BACKUP {
                 echo "Making a BackUp..."
                 cd /Volumes/Untitled/
                 cd user/00
-                cp -r ./ ~/Desktop/"$BACK"
+                tar -czvf - ./* > ~/Desktop/"$BACK".tar.gz
                 # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
@@ -47,7 +47,7 @@ function BACKUP {
         echo "Making a BackUp..."
         cd /Volumes/Untitled/
         cd user/00
-        cp -r ./ ~/Desktop/"$BACK"
+        tar -czvf - ./* > ~/Desktop/"$BACK".tar.gz
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
@@ -72,7 +72,7 @@ function TROPHY {
                 echo "Saving Your Trophys..."
                 cd /Volumes/Untitled/
                 cd user/00
-                cp -r ./trophy ~/Desktop/"$TROPHYS"
+                tar -czvf - ./* > ~/Desktop/"$TROPHYS".tar.gz
                 echo -e "\nFinish"
                 ;;
             n)
@@ -85,7 +85,7 @@ function TROPHY {
         echo "Saving Your Trophys..."
         cd /Volumes/Untitled/
         cd user/00
-        cp -r ./trophy ~/Desktop/"$TROPHYS"
+        tar -czvf - ./* > ~/Desktop/"$TROPHYS".tar.gz
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
@@ -110,7 +110,7 @@ function SAVE {
                 echo "Making a BackUp to Your Savedata..."
                 cd /Volumes/Untitled/
                 cd user/00
-                cp -r ./savedata ~/Desktop/"$SAVEDATA"
+                tar -czvf - ./* > ~/Desktop/"$SAVEDATA".tar.gz
                 # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
@@ -124,7 +124,7 @@ function SAVE {
         echo "Making a BackUp to Your Savedata..."
         cd /Volumes/Untitled/
         cd user/00
-        cp -r ./savedata ~/Desktop/"$SAVEDATA"
+        tar -czvf - ./* > ~/Desktop/"$SAVEDATA".tar.gz
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
