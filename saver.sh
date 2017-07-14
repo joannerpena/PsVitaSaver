@@ -15,6 +15,11 @@ SAVEDATA="PSVita-Save-$DATE"
 PSVITA="/Volumes/Untitled/tai"
 
 # Functions
+# Compressing Function
+function COMPRESS {
+    tar -czvf - ./* > ~/Desktop/"$1".tar.gz
+}
+
 # 1. BackUp
 function BACKUP {
     # -d : Exist?
@@ -33,7 +38,7 @@ function BACKUP {
                 echo "Making a BackUp..."
                 cd /Volumes/Untitled/
                 cd user/00
-                tar -czvf - ./* > ~/Desktop/"$BACK".tar.gz
+                COMPRESS $BACK
                 # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
@@ -47,7 +52,7 @@ function BACKUP {
         echo "Making a BackUp..."
         cd /Volumes/Untitled/
         cd user/00
-        tar -czvf - ./* > ~/Desktop/"$BACK".tar.gz
+        COMPRESS $BACK
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
@@ -72,7 +77,7 @@ function TROPHY {
                 echo "Saving Your Trophys..."
                 cd /Volumes/Untitled/
                 cd user/00
-                tar -czvf - ./* > ~/Desktop/"$TROPHYS".tar.gz
+                COMPRESS $TROPHYS
                 echo -e "\nFinish"
                 ;;
             n)
@@ -85,7 +90,7 @@ function TROPHY {
         echo "Saving Your Trophys..."
         cd /Volumes/Untitled/
         cd user/00
-        tar -czvf - ./* > ~/Desktop/"$TROPHYS".tar.gz
+        COMPRESS $TROPHYS
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
@@ -110,7 +115,7 @@ function SAVE {
                 echo "Making a BackUp to Your Savedata..."
                 cd /Volumes/Untitled/
                 cd user/00
-                tar -czvf - ./* > ~/Desktop/"$SAVEDATA".tar.gz
+                COMPRESS $SAVEDATA
                 # -e : LineBreak Allowed (\n)
                 echo -e "\nFinish"
                 ;;
@@ -124,7 +129,7 @@ function SAVE {
         echo "Making a BackUp to Your Savedata..."
         cd /Volumes/Untitled/
         cd user/00
-        tar -czvf - ./* > ~/Desktop/"$SAVEDATA".tar.gz
+        COMPRESS $SAVEDATA
         # -e : LineBreak Allowed (\n)
         echo -e "\nFinish"
         
